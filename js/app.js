@@ -266,4 +266,49 @@
       }
     }, { passive: true });
   }
+
+  /* ---------- 背景音乐（低音量，仅氛围） ---------- */
+  const bgm = $('#bgm');
+  const bgmToggle = $('#bgm-toggle');
+  if (bgm && bgmToggle) {
+    bgm.volume = 0.12;
+
+    const setBgmState = (on) => {
+      bgmToggle.classList.toggle('is-muted', !on);
+      bgmToggle.setAttribute('aria-pressed', on ? 'true' : 'false');
+    };
+
+    const tryPlayBgm = () =>
+      bgm.play().then(
+        () => { setBgmState(true); return true; },
+        () => { setBgmState(false); return false; }
+      );
+
+    bgmToggle.addEventListener('click', () => {
+      if (bgm.paused) {
+        localStorage.setItem('bgm-muted', '0');
+        tryPlayBgm();
+      } else {
+        localStorage.setItem('bgm-muted', '1');
+        bgm.pause();
+        setBgmState(false);
+      }
+    });
+
+    bgm.addEventListener('play', () => setBgmState(true));
+    bgm.addEventListener('pause', () => setBgmState(false));
+
+    // 浏览器禁止带声音自动播放：先尝试，失败则等用户第一次交互再播放
+    if (localStorage.getItem('bgm-muted') !== '1') {
+      tryPlayBgm().then((ok) => {
+        if (!ok) {
+          const resume = () => {
+            if (localStorage.getItem('bgm-muted') !== '1') tryPlayBgm();
+          };
+          document.addEventListener('pointerdown', resume, { once: true });
+          document.addEventListener('keydown', resume, { once: true });
+        }
+      });
+    }
+  }
 })();
