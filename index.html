@@ -225,8 +225,8 @@
         <rect x="0" y="780" width="1440" height="120" fill="url(#cloudSea)" opacity=".4"/>
       </svg>
 
-      <!-- 动态背景视频 -->
-      <video class="hero-video" autoplay muted loop playsinline preload="auto">
+      <!-- 动态背景视频（poster 为视频首帧，避免加载前闪变） -->
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/videos/bg-hero-poster.jpg">
         <source src="assets/videos/bg-hero.mp4" type="video/mp4">
       </video>
       <div class="hero-overlay" aria-hidden="true"></div>
