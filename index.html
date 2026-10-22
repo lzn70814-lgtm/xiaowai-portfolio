@@ -16,6 +16,107 @@
 </head>
 <body>
 
+  <!-- 天庭立柱框景 -->
+  <div class="tianzhu tianzhu-left" aria-hidden="true">
+    <svg viewBox="0 0 200 1000" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="colRedL" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#3b0f10"/>
+          <stop offset="30%" stop-color="#7a2320"/>
+          <stop offset="52%" stop-color="#9a2f26"/>
+          <stop offset="74%" stop-color="#6e1f1b"/>
+          <stop offset="100%" stop-color="#2c0a0a"/>
+        </linearGradient>
+        <linearGradient id="goldTrimL" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#8a6428"/>
+          <stop offset="50%" stop-color="#f0d08c"/>
+          <stop offset="100%" stop-color="#8a6428"/>
+        </linearGradient>
+        <linearGradient id="fadeYL" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+          <stop offset="7%" stop-color="#fff" stop-opacity="1"/>
+          <stop offset="93%" stop-color="#fff" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <mask id="colMaskL"><rect width="200" height="1000" fill="url(#fadeYL)"/></mask>
+      </defs>
+      <g mask="url(#colMaskL)">
+        <!-- 柱头与斗拱 -->
+        <g fill="#2a0c0c" stroke="url(#goldTrimL)" stroke-width="2">
+          <rect x="8" y="0" width="184" height="46"/>
+          <rect x="24" y="46" width="152" height="28"/>
+        </g>
+        <g fill="#3a1212" stroke="rgba(240,208,140,.35)" stroke-width="1.5">
+          <rect x="28" y="74" width="34" height="28"/>
+          <rect x="82" y="74" width="36" height="28"/>
+          <rect x="138" y="74" width="34" height="28"/>
+        </g>
+        <!-- 柱身 -->
+        <rect x="62" y="102" width="76" height="800" fill="url(#colRedL)"/>
+        <rect x="62" y="102" width="8" height="800" fill="rgba(255,225,170,.14)"/>
+        <rect x="130" y="102" width="8" height="800" fill="rgba(0,0,0,.32)"/>
+        <!-- 金箍 -->
+        <rect x="62" y="298" width="76" height="7" fill="url(#goldTrimL)" opacity=".75"/>
+        <rect x="62" y="700" width="76" height="7" fill="url(#goldTrimL)" opacity=".75"/>
+        <!-- 云纹雕花 -->
+        <g fill="none" stroke="url(#goldTrimL)" stroke-width="2.5" opacity=".5">
+          <path d="M80 420 q14 -26 32 -8 q-6 22 -26 16"/>
+          <path d="M80 560 q22 30 44 6 q-10 -26 -32 -20"/>
+          <path d="M84 486 q26 -18 40 8"/>
+        </g>
+        <!-- 柱础 -->
+        <rect x="44" y="902" width="112" height="34" fill="#2a0c0c" stroke="url(#goldTrimL)" stroke-width="2"/>
+      </g>
+    </svg>
+  </div>
+  <div class="tianzhu tianzhu-right" aria-hidden="true">
+    <svg viewBox="0 0 200 1000" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="colRedR" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#3b0f10"/>
+          <stop offset="30%" stop-color="#7a2320"/>
+          <stop offset="52%" stop-color="#9a2f26"/>
+          <stop offset="74%" stop-color="#6e1f1b"/>
+          <stop offset="100%" stop-color="#2c0a0a"/>
+        </linearGradient>
+        <linearGradient id="goldTrimR" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#8a6428"/>
+          <stop offset="50%" stop-color="#f0d08c"/>
+          <stop offset="100%" stop-color="#8a6428"/>
+        </linearGradient>
+        <linearGradient id="fadeYR" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+          <stop offset="7%" stop-color="#fff" stop-opacity="1"/>
+          <stop offset="93%" stop-color="#fff" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <mask id="colMaskR"><rect width="200" height="1000" fill="url(#fadeYR)"/></mask>
+      </defs>
+      <g mask="url(#colMaskR)">
+        <g fill="#2a0c0c" stroke="url(#goldTrimR)" stroke-width="2">
+          <rect x="8" y="0" width="184" height="46"/>
+          <rect x="24" y="46" width="152" height="28"/>
+        </g>
+        <g fill="#3a1212" stroke="rgba(240,208,140,.35)" stroke-width="1.5">
+          <rect x="28" y="74" width="34" height="28"/>
+          <rect x="82" y="74" width="36" height="28"/>
+          <rect x="138" y="74" width="34" height="28"/>
+        </g>
+        <rect x="62" y="102" width="76" height="800" fill="url(#colRedR)"/>
+        <rect x="62" y="102" width="8" height="800" fill="rgba(255,225,170,.14)"/>
+        <rect x="130" y="102" width="8" height="800" fill="rgba(0,0,0,.32)"/>
+        <rect x="62" y="298" width="76" height="7" fill="url(#goldTrimR)" opacity=".75"/>
+        <rect x="62" y="700" width="76" height="7" fill="url(#goldTrimR)" opacity=".75"/>
+        <g fill="none" stroke="url(#goldTrimR)" stroke-width="2.5" opacity=".5">
+          <path d="M80 420 q14 -26 32 -8 q-6 22 -26 16"/>
+          <path d="M80 560 q22 30 44 6 q-10 -26 -32 -20"/>
+          <path d="M84 486 q26 -18 40 8"/>
+        </g>
+        <rect x="44" y="902" width="112" height="34" fill="#2a0c0c" stroke="url(#goldTrimR)" stroke-width="2"/>
+      </g>
+    </svg>
+  </div>
+
   <!-- 顶部导航 -->
   <nav class="nav" id="nav">
     <a class="nav-logo" href="#top">
