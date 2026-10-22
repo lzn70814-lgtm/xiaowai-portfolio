@@ -267,6 +267,20 @@
     }, { passive: true });
   }
 
+  /* ---------- 背景视频：加载完成后淡入，失败时回退仙宫场景 ---------- */
+  const heroVideo = $('.hero-video');
+  const heroSceneSvg = $('.hero-scene .scene');
+  if (heroVideo) {
+    const markReady = () => heroVideo.classList.add('is-ready');
+    if (heroVideo.readyState >= 2) markReady();
+    heroVideo.addEventListener('loadeddata', markReady, { once: true });
+    heroVideo.addEventListener('canplay', markReady, { once: true });
+    heroVideo.addEventListener('error', () => {
+      heroVideo.style.display = 'none';
+      if (heroSceneSvg) heroSceneSvg.style.display = 'block';
+    }, { once: true });
+  }
+
   /* ---------- 背景音乐（低音量，仅氛围） ---------- */
   const bgm = $('#bgm');
   const bgmToggle = $('#bgm-toggle');
